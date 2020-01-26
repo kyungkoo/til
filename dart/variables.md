@@ -14,4 +14,16 @@ dynamic country = 'Korea';
 
 마지막으로 위 방법 이외에 `Object` 키워드를 사용하여 `Object language = "dart";` 와 같이 선언하는 방법도 있다.
 
-[가이드 라인](https://dart.dev/guides/language/effective-dart/design#do-annotate-with-object-instead-of-dynamic-to-indicate-any-object-is-allowed)에 따르면 `dynamic` 보다는 `Object` 를 추천하는 것으로 보이는데 정확한 이유는 좀 더 확인해 보아야 할듯 하다. 
+[가이드 라인](https://dart.dev/guides/language/effective-dart/design#do-annotate-with-object-instead-of-dynamic-to-indicate-any-object-is-allowed)에 따르면 `dynamic` 보다는 `Object` 를 추천하는 것으로 보이는데 정확한 이유는 좀 더 확인해 보아야 할듯 하다.
+
+
+### Default Value
+다트에서 취급하는 모든 타입은 객체이므로, 값을 할당하지 않은 변수는 모두 `null` 로 처리된다.
+
+```dart
+double pi;
+assert(pi == null);
+print(pi == null); // true
+```
+
+참고로 `assert` 메소드는 develop 에서만 동작하며 production code 에서는 메소드 동작을 무시한다.
